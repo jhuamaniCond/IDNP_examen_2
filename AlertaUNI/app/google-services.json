@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "435637124582",
+    "project_id": "alertauni-b6-09242302",
+    "storage_bucket": "alertauni-b6-09242302.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435637124582:android:807300af391b82eb512a27",
+        "android_client_info": {
+          "package_name": "com.erns.alertauni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435637124582-msmqchc0gat2q4u76ppval7fjc5t22a0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.erns.alertauni",
+            "certificate_hash": "044bf0b45caa394d912a524305863b14e5e2fc73"
+          }
+        },
+        {
+          "client_id": "435637124582-9cl2451dvq7odj522teiil2gpauqfrc6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJUUWVkcCB11WUD2f4VI1_3fEK9vGxLKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435637124582-9cl2451dvq7odj522teiil2gpauqfrc6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
