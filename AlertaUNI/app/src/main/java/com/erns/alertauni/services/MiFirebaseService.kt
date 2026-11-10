@@ -5,7 +5,6 @@ import android.app.NotificationManager
 import android.os.Build
 import android.util.Log
 import androidx.core.app.NotificationCompat
-import androidx.room.Room
 import com.erns.alertauni.R
 import com.erns.alertauni.data.local.AppDatabase
 import com.erns.alertauni.data.model.NotificacionEntity
@@ -82,7 +81,7 @@ class MiFirebaseService : FirebaseMessagingService() {
     }
 
     private fun saveNotificationToDatabase(cursoId: String, mensaje: String, fechaHora: String) {
-        val db = Room.databaseBuilder(this, AppDatabase::class.java, "notificaciones-db").build()
+        val db = AppDatabase.getInstance(this)
         val dao = db.notificacionDao()
 
         val notificacionEntity = NotificacionEntity(
