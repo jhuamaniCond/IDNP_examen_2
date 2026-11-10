@@ -28,4 +28,6 @@ class AnnounceRepositoryImpl @Inject constructor
         }
     }
 
+    override suspend fun setPriority(postId: Int, priority: String): Result<Unit> =
+        runCatching { announceDataSource.setPriority(postId, priority) }
 }

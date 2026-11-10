@@ -8,6 +8,10 @@ import com.erns.alertauni.data.model.SupabaseSimpleResponse
 import com.erns.alertauni.data.remote.api.ApiConstants
 import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.functions.functions
+import io.github.jan.supabase.postgrest.postgrest
+import io.github.jan.supabase.postgrest.rpc
+import kotlinx.serialization.json.buildJsonObject
+import kotlinx.serialization.json.put
 import io.ktor.client.call.body
 import javax.inject.Inject
 
@@ -33,5 +37,16 @@ class AnnounceDataSource @Inject constructor(
             throw Exception("Failed to fetch: ${response.status}")
         }
 
+    }
+
+    /** Guarda la prioridad del anuncio recien publicado (columna post.priority). Solo el autor puede. */
+    suspend fun setPriority(postId: Int, priority: String) {
+        supabaseClient.postgrest.rpc(
+            "set_post_priority",
+            buildJsonObject {
+                put("p_post_id", postId)
+                put("p_priority", priority)
+            }
+        )
     }
 }

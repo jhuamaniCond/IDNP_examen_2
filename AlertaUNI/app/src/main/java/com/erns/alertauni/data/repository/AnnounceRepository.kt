@@ -8,4 +8,5 @@ import com.erns.alertauni.data.model.SupabaseSimpleResponse
 interface AnnounceRepository {
     suspend fun addPostPrivate(postPrivateRequest: PostPrivateRequest): Result<PostPrivateResponse>
     suspend fun addPostPublic(postRequest: PostRequest): Result<PostPrivateResponse>
+    suspend fun setPriority(postId: Int, priority: String): Result<Unit>
 }

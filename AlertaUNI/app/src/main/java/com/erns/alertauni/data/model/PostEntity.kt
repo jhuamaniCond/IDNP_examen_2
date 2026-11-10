@@ -17,5 +17,6 @@ data class PostEntity(
     @SerialName("count_comments") val countComments: Int,
     @SerialName("is_private") val isPrivate: Boolean,
     @SerialName("published") val date: String,
-    @SerialName("receiver_private") val receiverPrivate: String?=""
+    @SerialName("receiver_private") val receiverPrivate: String?="",
+    @SerialName("priority") val priority: String? = null
 )
