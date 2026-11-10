@@ -11,7 +11,6 @@ import com.erns.alertauni.data.model.StudentEnrollment
 import com.erns.alertauni.data.repository.CourseRepository
 import com.erns.alertauni.data.repository.StudentRepository
 import com.erns.alertauni.domain.manager.DataStoreHelper
-import com.erns.alertauni.screen.post.PostViewModel.PostState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

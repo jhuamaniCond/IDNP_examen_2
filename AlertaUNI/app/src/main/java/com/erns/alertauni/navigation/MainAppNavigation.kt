@@ -4,6 +4,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -31,6 +33,8 @@ import com.erns.alertauni.screen.login.LoginScreen
 import com.erns.alertauni.screen.login.ProfileScreen
 import com.erns.alertauni.screen.post.PostCommentScreen
 import com.erns.alertauni.screen.post.PostScreen
+import com.erns.alertauni.ui.theme.MyPrimaryColor
+import com.erns.alertauni.ui.theme.MyPrimaryForegroundColor
 
 
 @Composable
@@ -100,9 +104,19 @@ fun MainMenuScreen(userType: String) {
     Scaffold(
         snackbarHost = { SnackbarHost(snackbarHostState) },
         floatingActionButton = {
-            if (currentDestination == RouteScreen.Posts.route ||
-                currentDestination == RouteMainMenu.Courses.route
-            ) {
+            if (currentDestination == RouteScreen.Posts.route) {
+                // Una sola entrada para publicar: público o privado se elige dentro.
+                // Solo el docente publica, así que el estudiante no ve el botón.
+                if (userType == "PROFESSOR") {
+                    ExtendedFloatingActionButton(
+                        onClick = fabAction.value,
+                        icon = { Icon(Icons.Default.Edit, contentDescription = null) },
+                        text = { Text("Nuevo anuncio") },
+                        containerColor = MyPrimaryColor,
+                        contentColor = MyPrimaryForegroundColor
+                    )
+                }
+            } else if (currentDestination == RouteMainMenu.Courses.route) {
                 FloatingActionButton(
                     shape = CircleShape,
                     onClick = fabAction.value

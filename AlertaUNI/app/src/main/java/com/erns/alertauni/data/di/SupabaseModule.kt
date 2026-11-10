@@ -8,6 +8,7 @@ import io.github.jan.supabase.SupabaseClient
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.functions.Functions
 import io.github.jan.supabase.gotrue.Auth
+import io.github.jan.supabase.postgrest.Postgrest
 import javax.inject.Singleton
 
 
@@ -28,7 +29,7 @@ object SupabaseModule {
             httpEngine = io.ktor.client.engine.okhttp.OkHttp.create()
             install(Functions) // Add this for Edge Functions
             install(Auth)
-
+            install(Postgrest) // Para la funcion set_post_priority
         }
     }
 
